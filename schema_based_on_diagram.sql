@@ -27,3 +27,25 @@ CREATE TABLE medical_histories_treatments(
 
 CREATE INDEX ON medical_histories_treatments (medical_history_id);
 CREATE INDEX ON medical_histories_treatments (treatment_id);
+
+CREATE TABLE invoices (
+  id SERIAL PRIMARY KEY NOT NULL,
+  total_amount DECIMAL(12, 3),
+  generated_at TIMESTAMP,
+  payed_at TIMESTAMP,
+  medical_history_id INT REFERENCES medical_histories(id)
+);
+
+CREATE INDEX ON invoices (medical_history_id);
+
+CREATE TABLE invoice_items (
+  id SERIAL PRIMARY KEY NOT NULL,
+  unit_price DECIMAL(12, 3),
+  quantity INT,
+  total_price DECIMAL(12, 3),
+  invoice_id INT REFERENCES invoices(id),
+  treatment_id INT REFERENCES treatments(id)
+);
+
+CREATE INDEX ON invoice_items (invoice_id);
+CREATE INDEX ON invoice_items (treatment_id);
