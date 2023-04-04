@@ -3,6 +3,7 @@ CREATE TABLE patient(
  name VARCHAR(60),
  date_of_birth DATE
 );
+
 CREATE TABLE medical_histories(
  id SERIAL PRIMARY KEY NOT NULL,
  admited_at TIMESTAMP,
@@ -11,3 +12,18 @@ CREATE TABLE medical_histories(
 );
 
 CREATE INDEX ON medical_histories (patient_id);
+
+CREATE TABLE treatments (
+  id SERIAL PRIMARY KEY NOT NULL,
+  type VARCHAR(60),
+  name VARCHAR(60)
+);
+
+CREATE TABLE medical_histories_treatments(
+  id SERIAL PRIMARY KEY NOT NULL,
+  medical_history_id INT REFERENCES medical_histories(id),
+  treatment_id INT REFERENCES treatments(id)
+);
+
+CREATE INDEX ON medical_histories_treatments (medical_history_id);
+CREATE INDEX ON medical_histories_treatments (treatment_id);
