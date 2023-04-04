@@ -9,6 +9,7 @@ Modify this file to match your project and remove sections that don't apply.
 REQUIRED SECTIONS:
 - Table of Contents
 - About the Project
+- [:camera: project screenshot](#screen-shoot)
   - Built With
 - Getting Started
 - Authors
@@ -26,6 +27,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+- [:camera: project screenshot](#screen-shoot)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -46,6 +48,10 @@ After you're finished please remove all the comments and instructions!
 # 📖 Clinic database <a name="about-project"></a>
 
 > This clinic database used as to effectively handle the medical records of patients, keep track of their payment invoices, and document the treatments they receive during their visits.
+
+## Project Screenshots
+
+![screen shot](clinic_er.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
